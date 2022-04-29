@@ -22,20 +22,12 @@ public:
                 j++;
                 
             }
-//             cout << gap << endl;
-//              for(int i = 0; i < n+m; i++) {
-            
-//                 cout << nums1[i] <<" " ;
-//             }
-//             cout << endl << endl;
             
             gap = ceil((float)gap/2);
             if(gapIsOne) break;
             
-            if(gap == 1) {
-                
-                gapIsOne = true;
-            }
+            if(gap == 1) gapIsOne = true;
+            
         }
     }
 };
