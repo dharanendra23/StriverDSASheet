@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int numberOfSteps(int &num) {
+    int numberOfSteps(int num) {
         
         int numOfSteps = 0;
         while(num) {
