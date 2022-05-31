@@ -7,8 +7,6 @@ public:
         map<string, int> binStr;
         
         for(int i = 0; i < s.length() - k + 1; ++i) {
-            
-            // cout << s.substr(i, k) <<endl;
            
             binStr[s.substr(i, k)]++;
         }
