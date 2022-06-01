@@ -7,33 +7,26 @@ using namespace std;
 class Solution{
     public:
     
+    void reverse(int nums[], int start, int end) {
+        
+        while(start < end) {
+            
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++, end--;
+        }
+    }
+    
     //Function to rotate an array by d elements in counter-clockwise direction. 
     void rotateArr(int arr[], int d, int n){
         // code here
         if(d == n) return;
         if(d > n) d = d%n;
         
-        int temp[d];
-        for(int i = 0; i < d; i++) {
-            
-            temp[i] = arr[i];
-        }
-        
-        // arr[] = {1, 2, 3, 4, 5}, d = 2
-        
-        for(int i = d; i < n; i++) {
-            
-            arr[i-d] = arr[i];
-        }
-        
-        // arr{3, 4, 5}
-        
-        for(int i = 0; i < d; i++) {
-            
-            arr[i + (n-d)] = temp[i];
-        }
-        
-        // arr{3, 4, 5, 1, 2}
+        reverse(arr, 0, d-1);
+        reverse(arr, d, n-1);
+        reverse(arr, 0, n-1);
     }
 };
 
